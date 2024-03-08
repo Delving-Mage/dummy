@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+const stateHook = (initialValue) => {
+  var value = initialValue;
+
+  const getValue = () => {
+    return console.log(value, "initial Value");
+  };
+
+  const setValue = (data) => {
+    value = data;
+    console.log(data, "updatedValue");
+    App();
+  };
+  return [getValue, setValue];
+};
+
+const [firstName, setFirstName] = stateHook("React");
+firstName()
+setFirstName("Besant classes")
+
+function App(){
+  console.log("rendered");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <label>
+        first name
+        <input
+          value={firstName}
+          onChange={(e) => {
+            console.log(e, "onchange trigger");
+            setFirstName(e.target.value);
+          }}
+          type="text"
+        ></input>
+      </label>
+    </>
   );
-}
+};
 
 export default App;
