@@ -1,0 +1,43 @@
+
+.text-editor {
+ width: 100%;
+ max-width: 800px; /* Adjust as needed */
+ margin: 0 auto;
+}
+
+.toolbar {
+ margin-bottom: 10px;
+}
+
+.toolbar button,
+.toolbar select {
+ margin-right: 10px;
+}
+
+.editor {
+ width: 100%;
+ min-height: 200px; /* Minimum height of the editor */
+ padding: 10px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+ resize: vertical;
+ overflow: auto; /* Enable scrolling if content exceeds the editor's height */
+}
+
+.editor table {
+ width: 100%;
+ border-collapse: collapse;
+ border: 1px solid black; /* Add border around the table */
+}
+
+.editor td, .editor th {
+ border: 1px solid black;
+ padding: 8px;
+ text-align: left;
+}
+
+.editor th {
+ background-color: #f2f2f2; /* Light gray background for table header */
+}
+
+
